@@ -1,14 +1,24 @@
 import * as constats from '../actions/constants';
+import {read_cookie, bake_cookie } from 'sfcookies';
+
+const BALANCE_COOKIE = 'BALANCE_COOKIE';
 
 export default (previousState = 0, actions) => {
+    let balance ;
     switch (actions.type) {
         case constats.SET_BALANCE:
-            return actions.balance;
+            balance = actions.balance;
+            break;
         case constats.DEPOSIT:
-            return previousState + actions.deposit;
+            balance =  previousState + actions.deposit;
+            break;
         case constats.WITHDRAW:
-            return previousState - actions.withDrawal;
+            balance = previousState - actions.withDrawal;
+            break;
         default:
-            return previousState;
+            balance = +(read_cookie(BALANCE_COOKIE)||previousState);
+            break;
     }
+    bake_cookie(BALANCE_COOKIE, balance);
+    return balance;
 }

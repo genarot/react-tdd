@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Wallet from "./Wallet";
+import Loot from "./Loot";
 
 function App() {
     return (
@@ -8,6 +9,7 @@ function App() {
             <h2>Loot Check</h2>
             <hr/>
             <Wallet/>
+            <Loot />
         </div>
     );
 }
