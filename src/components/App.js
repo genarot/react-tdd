@@ -9,7 +9,9 @@ function App() {
             <h2>Loot Check</h2>
             <hr/>
             <Wallet/>
+            <hr/>
             <Loot />
+            <div>Powered by <a href={'https://coindesk.com'} target={'_blank'}>Coindesk</a> </div>
         </div>
     );
 }
