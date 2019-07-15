@@ -4,13 +4,13 @@ import {fetchBitCoin} from "../store/actions/bitcoin";
 
 export const Loot = ({fetchBitCoin, bitcoin, balance}) => {
     React.useEffect(() => {
-        console.log(fetchBitCoin, bitcoin)
+        // console.log(fetchBitCoin, bitcoin)
         fetchBitCoin();
     },[]);
     const computeBitcoin = () => {
         if ( Object.keys(bitcoin).length === 0 ) return ''
         else
-            return balance / parseInt(bitcoin.bpi.USD.rate, 10);
+            return balance / parseInt(bitcoin.bpi.USD.rate.replace(',',''), 10);
     }
     return (
         <div>

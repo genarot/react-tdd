@@ -35,7 +35,7 @@ export class Wallet extends Component {
                     type="button"
                     className={"btn-withdraw"}
                     onClick={this.withDraw} >
-                    Deposit
+                    Withdraw
                 </button>
             </div>
         );

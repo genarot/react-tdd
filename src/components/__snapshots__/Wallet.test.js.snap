@@ -13,7 +13,7 @@ exports[`Wallet renders properly 1`] = `
     Deposit
   </button>
   <button type=\\"button\\" className=\\"btn-withdraw\\" onClick={[Function]}>
-    Deposit
+    Withdraw
   </button>
 </div>"
 `;

@@ -16,9 +16,8 @@ describe('Bitcoin' , () => {
     it('creates an async action to fetch the bitcoin value', (done) => {
         const expectedActions = [{bitcoin: mockResponse.body, type: FETCH_BITCOIN}];
 
-        store.dispatch(fetchBitCoin)
+        store.dispatch(fetchBitCoin())
             .then(() => {
-                console.log(store.getActions())
                 expect(store.getActions()).toEqual(expectedActions);
                 done();
             });
